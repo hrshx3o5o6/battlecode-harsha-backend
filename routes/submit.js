@@ -6,6 +6,7 @@ const JUDGE0_URL = 'https://judge0-ce.p.rapidapi.com'; // or http://localhost:30
 
 router.post('/', async (req, res) => {
   const { source_code, language_id, function_name, test_cases } = req.body;
+  console.log("recieved payload: ", req.body);
 
   if (!source_code || !language_id || !function_name || !Array.isArray(test_cases)) {
     return res.status(400).json({ error: 'Missing required fields' });
