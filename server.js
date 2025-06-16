@@ -4,6 +4,9 @@ import judgeRoute from './routes/judge.js';
 import dotenv from 'dotenv';
 import submitRoute from './routes/submit.js';
 import cors from 'cors';
+import roomRoute from './routes/pre-room.js';
+
+
 dotenv.config();
 app.use(cors({
   origin: "http://localhost:3000"
@@ -13,6 +16,7 @@ app.use(express.json());
 
 app.use('/api/judge', judgeRoute);
 app.use('/api/submit', submitRoute);
+app.use('/api/room', roomRoute);
 
 app.get('/', (req, res) => {
   res.send('Judge0 Playground is live!');
